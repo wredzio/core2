@@ -2,6 +2,7 @@ import React from 'react';
 
 import { PageQueryResult } from '@/components/cms/sanity-types';
 
+import { SanityCarousel } from './components/sanity-carousel';
 import { SanityImageSection } from './components/sanity-image-section';
 
 type ConfigQueryResultNotNullable = NonNullable<PageQueryResult>;
@@ -16,4 +17,5 @@ type SanityPageComponents = {
 
 export const sanityPageComponents = {
   imageSection: SanityImageSection,
+  carouselSection: SanityCarousel,
 } satisfies SanityPageComponents;

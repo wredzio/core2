@@ -61,7 +61,7 @@ core2/
 │   │   ├── layout.tsx          # Studio layout
 │   │   └── studio/             # Sanity Studio UI
 │   ├── layout.tsx              # Root layout
-│   ├── globals.css             # Global styles
+│   ├── globals.css             # Global styles with tailwind class definitions
 │   └── robots.ts               # Robots.txt configuration
 │
 ├── components/                  # React components
@@ -182,6 +182,7 @@ component-name/
 - **Props**: Define explicit prop interfaces for all components
 - **Accessibility**: Always include ARIA labels, semantic HTML, keyboard navigation
 - **Mobile-first**: Write styles mobile-first, use responsive breakpoints from `device-sizes.ts`
+- **Tailwind-first**: Always try to use existing tailwind class, if missing add a new one
 
 ### Accessibility Requirements
 
@@ -398,13 +399,13 @@ pnpm lint         # Run ESLint
 pnpm type-check   # Run TypeScript compiler check
 pnpm storybook    # Start Storybook on port 6006
 pnpm build-storybook  # Build Storybook for deployment
+pnpm typegen # Generate TypeScript types from schemas
 ```
 
 ### Sanity Commands
 
 ```bash
 pnpm sanity deploy         # Deploy Sanity Studio
-pnpm sanity typegen        # Generate TypeScript types from schemas
 ```
 
 ---
@@ -535,33 +536,12 @@ When working on this codebase, always follow these principles:
 - ✅ Image section implemented as example
 - 🔄 Additional sections to be added as needed
 
-### Future Enhancements
-
-- [ ] Vercel Analytics integration
-- [ ] Additional section types (hero, testimonials, contact form, etc.)
-- [ ] Performance optimization audit
-- [ ] Accessibility audit with real screen readers
-- [ ] SEO audit and structured data implementation
-- [ ] Internationalization (if needed)
-
 ### Important Reminders
 
 - Always test mobile responsiveness on real devices
 - Run accessibility checks before deploying major changes
 - Keep Sanity schemas synchronized with TypeScript types
 - Document any new patterns or architectural decisions here
-
----
-
-## 🤝 Contributing
-
-When contributing to this project:
-
-1. Follow the established naming conventions (kebab-case)
-2. Write accessible, mobile-first code
-3. Add proper TypeScript types
-4. Test on multiple devices and browsers
-5. Update this README if you introduce new patterns or conventions
 
 ---
 

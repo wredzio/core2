@@ -89,6 +89,7 @@ export const pageType = defineType({
       description: 'Lista sekcji budujących zawartość strony',
       of: [
         { type: 'imageSection' },
+        { type: 'carouselSection' },
         // Możesz tutaj dodać więcej typów sekcji w przyszłości
       ],
       validation: (Rule) => Rule.required().min(1),

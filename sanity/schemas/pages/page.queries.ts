@@ -55,7 +55,11 @@ export const pageQuery = defineQuery(`*[_type == "page" && slug.current == $slug
     fullWidth,
     phone,
     address,
-    email
+    email,
+    showCtaCard,
+    ctaText,
+    instagramUrl,
+    ctaPosition
   }
 }`);
 

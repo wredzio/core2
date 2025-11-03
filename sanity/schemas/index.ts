@@ -1,6 +1,7 @@
 import { responsiveImage } from './objects/responsive-image';
 import { pageType } from './pages/page';
 import { blockContentSection } from './sections/block-content-section';
+import { carouselSection } from './sections/carousel-section';
 import { contactSection } from './sections/contact-section';
 import { heroSection } from './sections/hero-section';
 import { imageSection } from './sections/image-section';
@@ -18,4 +19,5 @@ export const schemaTypes = [
   heroSection,
   subheadingSection,
   instagramCarouselSection,
+  carouselSection,
 ];

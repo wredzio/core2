@@ -2,6 +2,7 @@ import React from 'react';
 
 import { PageQueryResult } from '@/components/cms/sanity-types';
 
+import { SanityCarousel } from './components/sanity-carousel';
 import { SanityContactSection } from './components/sanity-contact-section';
 import { SanityHeroSection } from './components/sanity-hero-section';
 import { SanityImageSection } from './components/sanity-image-section';
@@ -24,4 +25,5 @@ export const sanityPageComponents = {
   contactSection: SanityContactSection,
   subheadingSection: SanitySubheadingSection,
   instagramCarouselSection: SanityInstagramCarouselSection,
+  carouselSection: SanityCarousel,
 } satisfies SanityPageComponents;

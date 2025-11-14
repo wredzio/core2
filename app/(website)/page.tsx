@@ -5,6 +5,10 @@ import type { PageQueryResult } from '@/components/cms/sanity-types';
 import { getClient } from '@/sanity/sanity.client';
 import { pageQuery } from '@/sanity/schemas/pages/page.queries';
 
+export const revalidate = 20;
+
+export const dynamic = 'force-static';
+
 export default async function Page() {
   const slugString = '/';
 

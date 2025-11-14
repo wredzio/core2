@@ -9,6 +9,10 @@ type PageProps = {
   params: Promise<{ slug?: string[] }>;
 };
 
+export const revalidate = 20;
+
+export const dynamic = 'force-static';
+
 export default async function Page({ params }: PageProps) {
   const { slug } = await params;
   const slugString = slug ? `/${slug.join('/')}` : '/';

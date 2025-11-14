@@ -33,5 +33,5 @@ export function getClient(preview?: { token: string; perspective: PreviewData })
  */
 export async function getNavigationData() {
   const client = getClient();
-  return client.fetch(navigationQuery, {}, { next: { revalidate: 3600 } });
+  return client.fetch(navigationQuery, {});
 }

@@ -3,10 +3,12 @@ import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 
 import { SiteLayout } from '../../components/layout/site-layout';
-import { getNavigationData } from '../../sanity/sanity.client';
 import { getSettings } from '../../sanity/lib/get-settings';
-
+import { getNavigationData } from '../../sanity/sanity.client';
 import { urlForImage } from '../../sanity/schemas/image';
+
+export const revalidate = 20;
+export const dynamic = 'force-static';
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSettings();

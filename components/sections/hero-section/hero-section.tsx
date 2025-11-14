@@ -20,7 +20,7 @@ export const HeroSection = (props: HeroSectionProps) => {
         <div className='container mb-10 lg:mx-auto lg:px-16'>
           <div className='flex max-w-[500] flex-col gap-6 rounded-lg bg-black/30 p-4 backdrop-blur-md md:max-w-[634px] lg:bg-transparent lg:p-0 lg:backdrop-blur-none'>
             {/* Title */}
-            <h1 className='font-michroma text-4xl leading-normal font-normal text-primary uppercase md:text-5xl lg:text-[56px]'>
+            <h1 className='font-michroma text-3xl leading-normal font-normal text-primary uppercase md:text-5xl lg:text-[56px]'>
               {title}
             </h1>
 

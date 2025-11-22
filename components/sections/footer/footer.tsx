@@ -97,6 +97,25 @@ export function Footer({ logo, showcaseImage, contact, socialLinks }: FooterProp
                   </div>
                 </div>
               </div>
+
+              {/* Polecane strony */}
+              <div className='mt-12 lg:mt-16'>
+                <h2 className='font-montserrat text-2xl font-bold tracking-[3.2px] text-primary uppercase lg:text-[32px]'>
+                  Polecane strony
+                </h2>
+                <ul className='mt-2'>
+                  <li>
+                    <a
+                      href='https://www.autozygula.pl/'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='font-montserrat text-sm tracking-[0.48px] text-white uppercase underline decoration-solid underline-offset-2 transition-colors hover:text-primary lg:text-base'
+                    >
+                      Złomowanie pojazdów
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 

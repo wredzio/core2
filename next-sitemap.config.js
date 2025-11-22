@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || 'https://www.nameOfSite.pl',
+  siteUrl: process.env.SITE_URL || 'https://www.wbcars.pl',
   generateRobotsTxt: true, // (optional)
   exclude: ['/studio', '*.txt', '*.png', '*.jpg', '*.jpeg', '*.svg'],
   transform: async (config, path) => {

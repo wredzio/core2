@@ -32,23 +32,18 @@ export const SanityOfferSection = (props: SanityOfferSectionProps) => {
           priority={false}
         />
       ) : null,
+      additionalOption: pkg.additionalOption
+        ? {
+            label: pkg.additionalOption.label,
+            price: pkg.additionalOption.price,
+          }
+        : undefined,
     };
   });
 
-  const additionalOption = section.additionalOption
-    ? {
-        label: section.additionalOption.label,
-        price: section.additionalOption.price,
-      }
-    : undefined;
-
   return (
     <PageSection fullWidth key={section._key}>
-      <OfferSection
-        packages={packages}
-        additionalOption={additionalOption}
-        defaultOpenPackage={packages[section.defaultOpenPackage || 0]?.id}
-      />
+      <OfferSection packages={packages} defaultOpenPackage={packages[section.defaultOpenPackage || 0]?.id} />
     </PageSection>
   );
 };

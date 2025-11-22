@@ -13,17 +13,19 @@ export const SanityCarousel = (props: SanityCarouselProps) => {
   // Transform images to CarouselItem[]
   const imageItems: CarouselItem[] =
     section.images?.map((img, index) => {
+      const altText = img.image?.alt || `Zdjęcie ${index + 1}`;
       return {
         type: 'image' as const,
         image: img.image?.asset ? (
           <ResponsiveImage
             loaderType='sanity'
             image={img.image}
+            alt={altText}
             aspectRatio={(img.aspectRatio as AspectRatio) || '1/1'}
             priority={index === 0}
           />
         ) : null,
-        alt: img.image?.alt || `Zdjęcie ${index + 1}`,
+        alt: altText,
       };
     }) || [];
 

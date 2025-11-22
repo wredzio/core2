@@ -5,6 +5,11 @@ import React, { useRef } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { cn } from '@/lib/utils';
 
+export interface AdditionalOption {
+  label: string; // e.g., "Zabezpieczenie powłoką ceramiczną"
+  price: number; // e.g., 100
+}
+
 export interface OfferPackage {
   id: string;
   number: string; // e.g., ".01", ".02", ".03"
@@ -13,21 +18,16 @@ export interface OfferPackage {
   description: string; // opis usług w pakiecie
   price: number; // e.g., 100
   image: React.ReactNode; // obrazek samochodu dla tego pakietu
-}
-
-export interface AdditionalOption {
-  label: string; // e.g., "Zabezpieczenie powłoką ceramiczną"
-  price: number; // e.g., 100
+  additionalOption?: AdditionalOption; // opcja dodatkowa dla tego pakietu
 }
 
 export interface OfferSectionProps {
   packages: OfferPackage[];
-  additionalOption?: AdditionalOption; // opcjonalne
   defaultOpenPackage?: string; // ID pakietu otwartego domyślnie
 }
 
 export const OfferSection = (props: OfferSectionProps) => {
-  const { packages, additionalOption, defaultOpenPackage } = props;
+  const { packages, defaultOpenPackage } = props;
   const [activePackage, setActivePackage] = React.useState<string>(defaultOpenPackage || packages[0]?.id || '');
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -48,7 +48,6 @@ export const OfferSection = (props: OfferSectionProps) => {
   };
 
   const activePackageData = packages.find((pkg) => pkg.id === activePackage);
-  const totalPrice = activePackageData ? activePackageData.price + (additionalOption ? additionalOption.price : 0) : 0;
 
   return (
     <section ref={sectionRef} className='relative w-full bg-background pt-8 pb-8 md:pt-20 md:pb-12 lg:pt-24 lg:pb-16'>
@@ -135,17 +134,17 @@ export const OfferSection = (props: OfferSectionProps) => {
                   </div>
                 </div>
                 {/* Additional option */}
-                {additionalOption && (
+                {pkg.additionalOption && (
                   <div className='flex flex-col gap-2 pt-4'>
-                    <p className='font-montserrat text-xs leading-normal font-normal text-primary-foreground md:text-sm lg:text-base'>
+                    <p className='font-montserrat text-xs leading-normal font-normal text-primary-foreground md:text-sm'>
                       Dodatkowo
                     </p>
                     <div className='flex w-full items-center justify-between'>
-                      <p className='font-montserrat text-base leading-normal font-normal text-primary-foreground md:text-lg lg:text-xl'>
-                        {additionalOption.label}
+                      <p className='font-montserrat text-sm leading-normal font-normal text-primary-foreground md:text-base'>
+                        {pkg.additionalOption.label}
                       </p>
-                      <p className='font-montserrat text-base leading-normal font-normal text-primary-foreground md:text-lg lg:text-xl'>
-                        +{additionalOption.price} zł
+                      <p className='font-montserrat text-sm leading-normal font-normal text-primary-foreground md:text-base'>
+                        {pkg.additionalOption.price === 0 ? 'GRATIS' : `+${pkg.additionalOption.price} zł`}
                       </p>
                     </div>
                   </div>

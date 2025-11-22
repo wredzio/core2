@@ -24,6 +24,7 @@ export const SanityImageSection = (props: SanityImageSectionProps) => {
             <ResponsiveImage
               loaderType='sanity'
               image={section.image.image}
+              alt={section.image.image.alt || section.title || 'Zdjęcie'}
               aspectRatio={aspectRatio}
               priority={false}
             />

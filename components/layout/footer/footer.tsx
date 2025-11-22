@@ -15,5 +15,5 @@ export async function Footer() {
     );
   }
 
-  return <SanityFooter {...settings} />;
+  return <SanityFooter {...(settings as any)} />;
 }

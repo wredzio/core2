@@ -60,6 +60,28 @@ export const offerSection = defineType({
               description: 'Obrazek z podświetlonymi częściami dla tego pakietu',
               validation: (Rule) => Rule.required(),
             }),
+            defineField({
+              name: 'additionalOption',
+              type: 'object',
+              title: 'Opcja dodatkowa',
+              description: 'Np. "Powłoka ceramiczna"',
+              fields: [
+                defineField({
+                  name: 'label',
+                  type: 'string',
+                  title: 'Etykieta',
+                  description: 'Np. "Zabezpieczenie powłoką ceramiczną"',
+                  validation: (Rule) => Rule.required(),
+                }),
+                defineField({
+                  name: 'price',
+                  type: 'number',
+                  title: 'Cena',
+                  description: 'Cena w zł (tylko liczba, np. 100). Ustaw 0 aby wyświetlić GRATIS',
+                  validation: (Rule) => Rule.required().min(0),
+                }),
+              ],
+            }),
           ],
           preview: {
             select: {
@@ -69,28 +91,6 @@ export const offerSection = defineType({
             },
           },
         },
-      ],
-    }),
-    defineField({
-      name: 'additionalOption',
-      type: 'object',
-      title: 'Opcja dodatkowa',
-      description: 'Np. "Powłoka ceramiczna"',
-      fields: [
-        defineField({
-          name: 'label',
-          type: 'string',
-          title: 'Etykieta',
-          description: 'Np. "Zabezpieczenie powłoką ceramiczną"',
-          validation: (Rule) => Rule.required(),
-        }),
-        defineField({
-          name: 'price',
-          type: 'number',
-          title: 'Cena',
-          description: 'Cena w zł (tylko liczba, np. 100)',
-          validation: (Rule) => Rule.required().min(0),
-        }),
       ],
     }),
     defineField({

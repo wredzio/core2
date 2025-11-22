@@ -22,12 +22,12 @@ export type OfferSection = {
     description: string;
     price: number;
     image: ResponsiveImage;
+    additionalOption?: {
+      label: string;
+      price: number;
+    };
     _key: string;
   }>;
-  additionalOption?: {
-    label: string;
-    price: number;
-  };
   defaultOpenPackage?: number;
 };
 
@@ -376,7 +376,7 @@ export type AllSanitySchemaTypes =
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/schemas/pages/page.queries.ts
 // Variable: pageQuery
-// Query: *[_type == "page" && slug.current == $slug][0]{  _id,  _type,  _createdAt,  _updatedAt,  _rev,  title,  slug,  metadata{    metaTitle,    metaDescription,    keywords,    ogImage{      ...,      asset->    },    noIndex  },  sections[]{    _key,    _type,    id,    title,    description,    text,    images[]{      ...,       image{        ...,        asset->      },      asset->,      alt,      aspectRatio    },    body[]{      ...,      _type == 'image' => {        ...,        asset->      }    },    image{      ...,      image{        ...,        asset->      },      aspectRatio    },    backgroundImage{      ...,      asset->    },    layout,    fullWidth,    phone,    address,    email,    showCtaCard,    ctaText,    instagramUrl,    ctaPosition,    _type == 'offerSection' => {      packages[]{        number,        subtitle,        title,        description,        price,        image{          image{            asset->,            alt,            hotspot          },          aspectRatio        }      },      additionalOption{        label,        price      },      defaultOpenPackage    }  }}
+// Query: *[_type == "page" && slug.current == $slug][0]{  _id,  _type,  _createdAt,  _updatedAt,  _rev,  title,  slug,  metadata{    metaTitle,    metaDescription,    keywords,    ogImage{      ...,      asset->    },    noIndex  },  sections[]{    _key,    _type,    id,    title,    description,    text,    images[]{      ...,       image{        ...,        asset->      },      asset->,      alt,      aspectRatio    },    body[]{      ...,      _type == 'image' => {        ...,        asset->      }    },    image{      ...,      image{        ...,        asset->      },      aspectRatio    },    backgroundImage{      ...,      asset->    },    layout,    fullWidth,    phone,    address,    email,    showCtaCard,    ctaText,    instagramUrl,    ctaPosition,    _type == 'offerSection' => {      packages[]{        number,        subtitle,        title,        description,        price,        image{          image{            asset->,            alt,            hotspot          },          aspectRatio        },        additionalOption{          label,          price        }      },      defaultOpenPackage    }  }}
 export type PageQueryResult = {
   _id: string;
   _type: 'page';
@@ -704,11 +704,11 @@ export type PageQueryResult = {
             };
             aspectRatio: '1/1' | '13/5' | '16/9' | '3/2' | '3/4' | '4/3' | '9/16';
           };
+          additionalOption: {
+            label: string;
+            price: number;
+          } | null;
         }>;
-        additionalOption: {
-          label: string;
-          price: number;
-        } | null;
         defaultOpenPackage: number | null;
       }
     | {
@@ -811,7 +811,7 @@ export type SettingsQueryResult = {
 import '@sanity/client';
 declare module '@sanity/client' {
   interface SanityQueries {
-    "*[_type == \"page\" && slug.current == $slug][0]{\n  _id,\n  _type,\n  _createdAt,\n  _updatedAt,\n  _rev,\n  title,\n  slug,\n  metadata{\n    metaTitle,\n    metaDescription,\n    keywords,\n    ogImage{\n      ...,\n      asset->\n    },\n    noIndex\n  },\n  sections[]{\n    _key,\n    _type,\n    id,\n    title,\n    description,\n    text,\n    images[]{\n      ...,\n       image{\n        ...,\n        asset->\n      },\n      asset->,\n      alt,\n      aspectRatio\n    },\n    body[]{\n      ...,\n      _type == 'image' => {\n        ...,\n        asset->\n      }\n    },\n    image{\n      ...,\n      image{\n        ...,\n        asset->\n      },\n      aspectRatio\n    },\n    backgroundImage{\n      ...,\n      asset->\n    },\n    layout,\n    fullWidth,\n    phone,\n    address,\n    email,\n    showCtaCard,\n    ctaText,\n    instagramUrl,\n    ctaPosition,\n    _type == 'offerSection' => {\n      packages[]{\n        number,\n        subtitle,\n        title,\n        description,\n        price,\n        image{\n          image{\n            asset->,\n            alt,\n            hotspot\n          },\n          aspectRatio\n        }\n      },\n      additionalOption{\n        label,\n        price\n      },\n      defaultOpenPackage\n    }\n  }\n}": PageQueryResult;
+    "*[_type == \"page\" && slug.current == $slug][0]{\n  _id,\n  _type,\n  _createdAt,\n  _updatedAt,\n  _rev,\n  title,\n  slug,\n  metadata{\n    metaTitle,\n    metaDescription,\n    keywords,\n    ogImage{\n      ...,\n      asset->\n    },\n    noIndex\n  },\n  sections[]{\n    _key,\n    _type,\n    id,\n    title,\n    description,\n    text,\n    images[]{\n      ...,\n       image{\n        ...,\n        asset->\n      },\n      asset->,\n      alt,\n      aspectRatio\n    },\n    body[]{\n      ...,\n      _type == 'image' => {\n        ...,\n        asset->\n      }\n    },\n    image{\n      ...,\n      image{\n        ...,\n        asset->\n      },\n      aspectRatio\n    },\n    backgroundImage{\n      ...,\n      asset->\n    },\n    layout,\n    fullWidth,\n    phone,\n    address,\n    email,\n    showCtaCard,\n    ctaText,\n    instagramUrl,\n    ctaPosition,\n    _type == 'offerSection' => {\n      packages[]{\n        number,\n        subtitle,\n        title,\n        description,\n        price,\n        image{\n          image{\n            asset->,\n            alt,\n            hotspot\n          },\n          aspectRatio\n        },\n        additionalOption{\n          label,\n          price\n        }\n      },\n      defaultOpenPackage\n    }\n  }\n}": PageQueryResult;
     '*[_type == "page"]{\n  _id,\n  title,\n  slug\n}': AllPagesQueryResult;
     '*[_type == "settings"][0]{\n  _id,\n  navigation{\n    navigationLinks[]{\n      label,\n      href,\n      external,\n      order\n    } | order(order asc)\n  }\n}': NavigationQueryResult;
     '\n  *[_type == "settings"][0] {\n    _id,\n    title,\n    description,\n    keywords,\n    url,\n    phone,\n    address,\n    mail,\n    social,\n    footerImage {\n      ...,\n      image {\n        ...,\n        asset->\n      }\n    }\n  }\n': SettingsQueryResult;

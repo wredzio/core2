@@ -79,11 +79,11 @@ export const pageQuery = defineQuery(`*[_type == "page" && slug.current == $slug
             hotspot
           },
           aspectRatio
+        },
+        additionalOption{
+          label,
+          price
         }
-      },
-      additionalOption{
-        label,
-        price
       },
       defaultOpenPackage
     }

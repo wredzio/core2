@@ -61,6 +61,29 @@
                     "name": "responsiveImage"
                   },
                   "optional": false
+                },
+                "additionalOption": {
+                  "type": "objectAttribute",
+                  "value": {
+                    "type": "object",
+                    "attributes": {
+                      "label": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "string"
+                        },
+                        "optional": false
+                      },
+                      "price": {
+                        "type": "objectAttribute",
+                        "value": {
+                          "type": "number"
+                        },
+                        "optional": false
+                      }
+                    }
+                  },
+                  "optional": true
                 }
               },
               "rest": {
@@ -77,29 +100,6 @@
             }
           },
           "optional": false
-        },
-        "additionalOption": {
-          "type": "objectAttribute",
-          "value": {
-            "type": "object",
-            "attributes": {
-              "label": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "string"
-                },
-                "optional": false
-              },
-              "price": {
-                "type": "objectAttribute",
-                "value": {
-                  "type": "number"
-                },
-                "optional": false
-              }
-            }
-          },
-          "optional": true
         },
         "defaultOpenPackage": {
           "type": "objectAttribute",

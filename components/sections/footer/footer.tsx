@@ -1,5 +1,7 @@
 import { Building2, Facebook, Instagram,Mail, PhoneCall } from "lucide-react";
 
+import { Logo } from "@/components/ui/logo/logo";
+
 export interface FooterProps {
   contact: {
     phone: string;
@@ -39,10 +41,8 @@ export function Footer({ contact, socialLinks }: FooterProps) {
           {/* Main Content */}
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             {/* Left Column - Logo & Brand */}
-            <div className="flex flex-col gap-6">
-              <span className="font-syne text-3xl font-extrabold text-primary neon-text-glow">
-                KSZ
-              </span>
+            <div className="flex flex-col items-start gap-6">
+              <Logo className="h-8" />
               <div className="h-px w-48 bg-gradient-to-r from-primary to-transparent" />
               <p className="font-dm-sans max-w-sm text-sm text-muted-foreground">
                 Tworzymy nowoczesne strony internetowe, które wyróżnią Twój

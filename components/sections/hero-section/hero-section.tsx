@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 
+import { Logo } from "@/components/ui/logo/logo";
 import { cn } from "@/lib/utils";
 
 import { FloatingLines } from "../../ui/floating-lines/floating-lines";
@@ -63,14 +64,9 @@ export const HeroSection = (props: HeroSectionProps) => {
       {/* Content overlay — pointer-events-none so mouse reaches the canvas */}
       <div className="pointer-events-none relative z-10 flex h-full flex-col items-center justify-center px-4">
         <div className="flex max-w-4xl flex-col items-center gap-8 text-center">
-          <h1
-            className={cn(
-              "font-syne text-5xl font-extrabold tracking-tight text-primary uppercase",
-              "neon-text-glow",
-              "md:text-7xl lg:text-8xl",
-            )}
-          >
-            {title}
+          <h1>
+            <span className="sr-only">{title}</span>
+            <Logo className="h-16 md:h-24 lg:h-32" />
           </h1>
 
           <p className="font-dm-sans max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl lg:text-2xl">

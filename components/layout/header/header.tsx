@@ -4,6 +4,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler/animated-theme-toggler";
+import { Logo } from "@/components/ui/logo/logo";
 import { cn } from "@/lib/utils";
 
 export interface NavigationLink {
@@ -122,12 +123,8 @@ export const Header = ({ navigationLinks, className }: PageHeaderProps) => {
         )}
       >
         {/* Logo */}
-        <Link
-          href="/"
-          className="font-syne text-2xl font-extrabold tracking-tight text-primary neon-text-glow"
-          aria-label="Strona główna"
-        >
-          KSZ
+        <Link href="/" aria-label="Strona główna">
+          <Logo className="h-6" />
         </Link>
 
         {/* Desktop Navigation */}
